@@ -1,25 +1,62 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Home from "./Component/Home/Home/Home";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Dashbord from "./Component/Admin/Dashbord/Dashbord";
+import ServiceList from "./Component/Admin/ServiceList/ServiceList";
+import AddService from "./Component/AddService/AddService";
+import Order from "./Component/Admin/Order/Order";
+import MakeAdmin from "./Component/MakAdmin/MakeAdmin";
+import Review from "./Component/Review/Review";
+import { useState } from "react";
+import Login from "./Component/Login/Login";
+import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
+
+export const ServicesContext = createContext();
+
+export const UserContext = createContext();
 
 function App() {
+  const [item, setItem] = useState({});
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ServicesContext.Provider value={[item, setItem]}>
+      <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+        <Router>
+          <Switch>
+            <Route path="/home">
+              <Home />
+            </Route>
+            <PrivateRoute path="/dashbord">
+              <Dashbord />
+            </PrivateRoute>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
+
+            <Route path="/addservice">
+              <AddService />
+            </Route>
+            <Route path="/order">
+              <Order />
+            </Route>
+            <Route path="/makeadmin">
+              <MakeAdmin />
+            </Route>
+            <Route path="/review">
+              <Review />
+            </Route>
+            <Route path="/servicelist">
+              <ServiceList />
+            </Route>
+          </Switch>
+        </Router>
+      </UserContext.Provider>
+    </ServicesContext.Provider>
   );
 }
 

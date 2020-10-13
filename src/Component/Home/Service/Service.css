@@ -1,0 +1,11 @@
+.blogs .card {
+  border: 0;
+  text-align: center;
+}
+.blogs .card-header {
+  border: 0;
+  background-color: transparent;
+}
+.blogs .card:hover {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}

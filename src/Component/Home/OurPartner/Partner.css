@@ -1,0 +1,7 @@
+.partner img {
+  height: 36px;
+}
+.partner img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

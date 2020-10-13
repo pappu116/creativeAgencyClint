@@ -1,0 +1,16 @@
+.sidebar {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.sidebar li {
+  padding: 10px;
+}
+
+.sidebar li a {
+  text-decoration: none;
+  color: #333;
+}
+.sidebar li a:hover {
+  color: #1ea059;
+}
