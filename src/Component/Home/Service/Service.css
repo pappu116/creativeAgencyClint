@@ -6,6 +6,15 @@
   border: 0;
   background-color: transparent;
 }
-.blogs .card:hover {
+.blogs .animate:hover {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  transform: rotateY(360deg);
+  -moz-transform: rotateY(360deg);
+  -webkit-transform: rotateY(360deg);
+  transform-origin: center;
+  -moz-transform-origin: center;
+  -webkit-transform-origin: center;
+  transition: 2s ease;
+  -moz-transition: 2s ease;
+  -webkit-transition: 2s ease;
 }

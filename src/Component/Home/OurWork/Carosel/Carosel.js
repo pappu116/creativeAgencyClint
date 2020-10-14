@@ -10,13 +10,13 @@ const Carosel = () => {
   return (
     <div>
       <OwlCarousel className="owl-theme" loop margin={30} nav>
-        <div class="item">
+        <div className="item">
           <img src={Image1} alt="" />
         </div>
-        <div class="item">
+        <div className="item">
           <img src={Image2} alt="" />
         </div>
-        <div class="item">
+        <div className="item">
           <img
             style={{ height: "250px" }}
             className="image-fluid"
@@ -24,10 +24,10 @@ const Carosel = () => {
             alt=""
           />
         </div>
-        <div class="item">
+        <div className="item">
           <img src={Image2} alt="" />
         </div>
-        <div class="item">
+        <div className="item">
           <img
             style={{ height: "250px" }}
             className="image-fluid"
@@ -35,10 +35,10 @@ const Carosel = () => {
             alt=""
           />
         </div>
-        <div class="item">
+        <div className="item">
           <img src={Image2} alt="" />
         </div>
-        <div class="item">
+        <div className="item">
           <img
             style={{ height: "250px" }}
             className="image-fluid"
@@ -46,10 +46,10 @@ const Carosel = () => {
             alt=""
           />
         </div>
-        <div class="item">
+        <div className="item">
           <img src={Image1} alt="" />
         </div>
-        <div class="item">
+        <div className="item">
           <img
             style={{ height: "250px" }}
             className="image-fluid"
@@ -57,7 +57,7 @@ const Carosel = () => {
             alt=""
           />
         </div>
-        <div class="item">
+        <div className="item">
           <img src={Image1} alt="" />
         </div>
       </OwlCarousel>

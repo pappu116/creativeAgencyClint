@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "../../Sidebar/Sidebar";
 import "./Tabel.css";
-
 const AdminTabel = () => {
-  const [info, setInfo] = useState({});
   const [item, setItem] = useState([]);
   useEffect(() => {
     fetch("https://pacific-bastion-98056.herokuapp.com/order")
@@ -11,20 +8,9 @@ const AdminTabel = () => {
       .then((data) => setItem(data));
   }, []);
 
-  const hanelChange = (e) => {
-    const newInfo = { ...info };
-    newInfo[e.target.name] = e.target.value;
-    setInfo(newInfo);
-    fetch("hhttp://localhost:5000/update", {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(info),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+  const hanelChange = (id) => {
+    console.log(id);
   };
-  console.log(info);
-
   return (
     <div className=" backgroundAdmin row">
       <table className="tabel">
@@ -46,8 +32,8 @@ const AdminTabel = () => {
               <td>{item.description} </td>
               <td>
                 <select
-                  class="custom-select"
-                  onChange={hanelChange}
+                  className="custom-select"
+                  onChange={() => hanelChange(item._id)}
                   id="inputGroupSelect01"
                 >
                   <option name="status" selected>
