@@ -54,6 +54,9 @@ function App() {
                 <Home />
               </Route>
 
+              <Route path="/addservice">
+                <AddService />
+              </Route>
               <Route path="/order">
                 <Order />
               </Route>
