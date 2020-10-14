@@ -44,16 +44,15 @@ const ServiceList = () => {
               <h4 className="ml-2">{loggedInUser.name}</h4>
             </div>
           </div>
-          {/* {isAdmin ? ( */}
-
-          <AdminTabel />
-          {/* // ) : (
-          //   <div className="card-deck   mt-5">
-          //     {item.map((item) => (
-          //       <ServiceListDetails item={item} />
-          //     ))} */}
-          {/* </div>
-          )} */}
+          {isAdmin ? (
+            <AdminTabel />
+          ) : (
+            <div className="card-deck   mt-5">
+              {item.map((item) => (
+                <ServiceListDetails item={item} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

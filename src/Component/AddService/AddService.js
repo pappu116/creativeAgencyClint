@@ -31,6 +31,7 @@ const AddService = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+        alert("Service Added successfully");
         console.log(data);
       })
       .catch((error) => {
@@ -99,7 +100,7 @@ const AddService = () => {
                       id="inputGroupFile02"
                     />
                     <label className="custom-file-label" for="inputGroupFile02">
-                      <img style={{ height: "30px" }} src={icon} alt="" />{" "}
+                      <img style={{ height: "30px" }} src={icon} alt="" />
                       Upload Image
                     </label>
                   </div>

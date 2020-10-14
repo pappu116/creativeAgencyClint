@@ -9,12 +9,12 @@ import { AdminContext, UserContext } from "../../../App";
 const Sidebar = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [isAdmin, setIsAdmin] = useContext(AdminContext);
-
+  const token = sessionStorage.getItem("token");
   useEffect(() => {
     fetch("https://pacific-bastion-98056.herokuapp.com/isAdmin", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ email: loggedInUser.email }),
+      body: JSON.stringify({ email: loggedInUser.email || token }),
     })
       .then((res) => res.json())
       .then((data) => setIsAdmin(data));

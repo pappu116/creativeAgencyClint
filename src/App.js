@@ -41,9 +41,6 @@ function App() {
               <Route path="/login">
                 <Login />
               </Route>
-              <Route path="/admintabel">
-                <AdminTabel />
-              </Route>
               <Route path="/ourportfolio">
                 <OurPortfolio />
               </Route>

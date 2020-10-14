@@ -8,10 +8,11 @@ const AdminTabel = () => {
       .then((data) => setItem(data));
   }, []);
 
-  const hanelChange = (id) => {
-    const status = document.getElementById("inputGroupSelect01").value;
+  const hanelChange = (id, index) => {
+    const status = document.getElementById(`inputGroupSelect${index}`).value;
+    console.log(status);
     const product = { id, status };
-    fetch(`http://localhost:5000/update/${id}`, {
+    fetch(`https://pacific-bastion-98056.herokuapp.com/update/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(product),
@@ -43,7 +44,7 @@ const AdminTabel = () => {
           </tr>
         </thead>
         <tbody>
-          {item.map((item) => (
+          {item.map((item, index) => (
             <tr>
               <td>{item.name}</td>
               <td>{item.email}</td>
@@ -51,12 +52,12 @@ const AdminTabel = () => {
               <td>{item.description} </td>
               <td>
                 <select
-                  className="custom-select"
                   style={item.status === "Done" ? styleDone : stylePending}
-                  onChange={() => hanelChange(item._id)}
-                  id="inputGroupSelect01"
+                  class="custom-select"
+                  onChange={() => hanelChange(item._id, index)}
+                  id={"inputGroupSelect" + index}
                 >
-                  <option name="status">{item.status}</option>
+                  <option selected>{item.status}</option>
                   <option name="status" value="Done">
                     Done
                   </option>

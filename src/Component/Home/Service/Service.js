@@ -12,12 +12,12 @@ const Service = () => {
   return (
     <section className="blogs my-5">
       <div className="container">
-        <div className="section-header text-center">
+        <div className="section-header text-center mt-5  pt-5">
           <h1>
-            Provide awesome <span style={{ color: "#79B058" }}>services</span>{" "}
+            Provide awesome <span style={{ color: "#79B058" }}>services</span>
           </h1>
         </div>
-        <div className="row   mt-5">
+        <div className="row  mb-5 mt-5">
           {item.map((blog) => (
             <ServiceDetails blog={blog} />
           ))}

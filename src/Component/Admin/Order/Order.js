@@ -16,6 +16,7 @@ const Order = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        alert("Your Order was successfully");
         console.log(data);
       });
   };

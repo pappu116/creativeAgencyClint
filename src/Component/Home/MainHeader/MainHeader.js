@@ -6,7 +6,7 @@ const MainHeader = () => {
       <div className="container-fluid d-flex mt-5 ">
         <div className="row d-flex align-items-center">
           <div className="col-md-5 ">
-            <h1>
+            <h1 style={{ fontSize: "3.5rem", fontWeight: " 700" }}>
               Let's Grow Your <br /> Brand To The <br /> Next Level
             </h1>
             <p>

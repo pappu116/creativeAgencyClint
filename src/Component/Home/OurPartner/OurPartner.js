@@ -8,8 +8,8 @@ import "./Partner.css";
 const OurPartner = () => {
   return (
     <section className="container">
-      <div className="">
-        <div className="row  text-center ">
+      <div className="mt-5 mb-5 pb-5">
+        <div className="row d-flex justify-content-center  text-center ">
           <div className="col-md-4   col-lg-2 col-sm-6  ">
             <div className="partner m-4">
               <img src={Slick} alt="" />
