@@ -13,6 +13,10 @@ import { useState } from "react";
 import Login from "./Component/Login/Login";
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
 import AdminTabel from "./Component/Admin/ServiceList/AdminTabel/AdminTabel";
+import NotFound from "./Component/404/NotFound";
+import OurPortfolio from "./Component/OurPortfolio/OurPortfolio";
+import OurTeam from "./Component/OurTeam/OurTeam";
+import Contac from "./Component/ContacUs/Contac";
 
 export const ServicesContext = createContext();
 
@@ -40,6 +44,15 @@ function App() {
               <Route path="/admintabel">
                 <AdminTabel />
               </Route>
+              <Route path="/ourportfolio">
+                <OurPortfolio />
+              </Route>
+              <Route path="/ourteam">
+                <OurTeam />
+              </Route>
+              <Route path="/contact">
+                <Contac />
+              </Route>
               <Route exact path="/">
                 <Home />
               </Route>
@@ -58,6 +71,9 @@ function App() {
               </Route>
               <Route path="/servicelist">
                 <ServiceList />
+              </Route>
+              <Route path="/*">
+                <NotFound />
               </Route>
             </Switch>
           </Router>

@@ -94,7 +94,7 @@ const Order = () => {
                 ref={register}
               />
               <br />
-              <button className="btn btn-primary" type="submit">
+              <button className="btn btn-brand" type="submit">
                 send
               </button>
             </form>
