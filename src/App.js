@@ -50,13 +50,14 @@ function App() {
               <Route path="/contact">
                 <Contac />
               </Route>
-              <Route exact path="/">
-                <Home />
-              </Route>
 
               <Route path="/addservice">
                 <AddService />
               </Route>
+              <Route exact path="/">
+                <Home />
+              </Route>
+
               <Route path="/order">
                 <Order />
               </Route>
