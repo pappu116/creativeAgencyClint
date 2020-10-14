@@ -11,7 +11,7 @@ const Sidebar = () => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/isAdmin", {
+    fetch("https://pacific-bastion-98056.herokuapp.com/isAdmin", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ email: loggedInUser.email }),
@@ -23,22 +23,7 @@ const Sidebar = () => {
     <section style={{ height: "100vh" }}>
       <img className="mt-5 mb-5" style={{ height: "40px" }} src={Logo} alt="" />
       <ul className="sidebar">
-        <li>
-          <Link to="/order">
-            <AddShoppingCart /> Order
-          </Link>
-        </li>
-        <li>
-          <Link to="/servicelist">
-            <StorageOutlined /> Service list
-          </Link>
-        </li>
-        <li>
-          <Link to="/review">
-            <SmsIcon /> Review
-          </Link>
-        </li>
-        {isAdmin && (
+        {isAdmin ? (
           <div>
             <li>
               <Link to="/addservice">
@@ -48,6 +33,30 @@ const Sidebar = () => {
             <li>
               <Link to="/makeadmin">
                 <PersonAddIcon /> Make Admin
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/servicelist">
+                <StorageOutlined /> Service list
+              </Link>
+            </li>
+          </div>
+        ) : (
+          <div>
+            <li>
+              <Link to="/order">
+                <AddShoppingCart /> Order
+              </Link>
+            </li>
+            <li>
+              <Link to="/servicelist">
+                <StorageOutlined /> Service list
+              </Link>
+            </li>
+            <li>
+              <Link to="/review">
+                <SmsIcon /> Review
               </Link>
             </li>
           </div>

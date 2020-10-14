@@ -1,0 +1,19 @@
+.header {
+  position: relative;
+  background-color: #fbd062;
+  height: 700px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.header:after {
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -12%;
+  content: "";
+  z-index: -52;
+  height: 25%;
+  width: 110%;
+  transform: rotate(-5deg);
+}

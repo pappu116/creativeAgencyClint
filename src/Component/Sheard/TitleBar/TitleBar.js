@@ -2,6 +2,8 @@ import React from "react";
 const style = {
   backgroundColor: "#FFFFFF",
   padding: "10px 40px",
+
+  marginLeft: "-15px",
 };
 const TitleBar = (props) => {
   return (

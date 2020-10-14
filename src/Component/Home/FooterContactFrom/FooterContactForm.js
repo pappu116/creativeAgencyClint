@@ -43,7 +43,7 @@ const FooterContactForm = () => {
                 rows="10"
               ></textarea>
               <br />
-              <button className="btn btn-primary" type="submit">
+              <button className="btn btn-brand" type="submit">
                 send
               </button>
             </form>

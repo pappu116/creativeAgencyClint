@@ -21,6 +21,7 @@ const ServiceListDetails = (props) => {
           </p>
         </div>
       </div>
+      <br />
     </div>
   );
 };

@@ -1,15 +1,12 @@
 import React from "react";
 import NavBar from "../../Sheard/NavBar/NavBar";
 import MainHeader from "../MainHeader/MainHeader";
-const bgStyle = {
-  backgroundColor: "#FBD062",
-  height: " 684.53px",
-};
+import "./Header.css";
 
 const Header = () => {
   return (
-    <div style={bgStyle}>
-      <div className="container">
+    <div className="header">
+      <div className="container ">
         <NavBar />
         <MainHeader />
       </div>

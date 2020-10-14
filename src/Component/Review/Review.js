@@ -5,7 +5,7 @@ import TitleBar from "../Sheard/TitleBar/TitleBar";
 const Review = () => {
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/addReview", {
+    fetch("https://pacific-bastion-98056.herokuapp.com/addReview", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -19,7 +19,7 @@ const Review = () => {
   return (
     <section className=" container-fluid">
       <div className="row backgroundAdmin">
-        <div className="col-md-2">
+        <div className="col-md-2 bg-color">
           <Sidebar />
         </div>
         <div className="col-md-10">

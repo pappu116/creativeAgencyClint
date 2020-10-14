@@ -5,7 +5,7 @@ import TitleBar from "../Sheard/TitleBar/TitleBar";
 const MakeAdmin = () => {
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/admin", {
+    fetch("https://pacific-bastion-98056.herokuapp.com/admin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

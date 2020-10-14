@@ -10,7 +10,7 @@ const Order = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     const orderData = { ...data, ...item };
-    fetch("http://localhost:5000/addOrder", {
+    fetch("https://pacific-bastion-98056.herokuapp.com/addOrder", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(orderData),

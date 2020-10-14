@@ -12,6 +12,7 @@ import Review from "./Component/Review/Review";
 import { useState } from "react";
 import Login from "./Component/Login/Login";
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
+import AdminTabel from "./Component/Admin/ServiceList/AdminTabel/AdminTabel";
 
 export const ServicesContext = createContext();
 
@@ -33,6 +34,9 @@ function App() {
             </PrivateRoute>
             <Route path="/login">
               <Login />
+            </Route>
+            <Route path="/admintabel">
+              <AdminTabel />
             </Route>
             <Route exact path="/">
               <Home />

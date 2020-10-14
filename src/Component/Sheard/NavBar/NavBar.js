@@ -49,7 +49,12 @@ const NavBar = () => {
               <h2>{loggedInUser.name}</h2>
             ) : (
               <Link to="/login">
-                <button className="btn btn-primary">Login</button>
+                <button
+                  style={{ padding: "5px 20px" }}
+                  className="btn btn-brand"
+                >
+                  Login
+                </button>
               </Link>
             )}
           </li>

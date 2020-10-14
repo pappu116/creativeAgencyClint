@@ -5,7 +5,7 @@ const ClientComments = () => {
   const [item, setItem] = useState([]);
   const first3 = item.slice(0, 3);
   useEffect(() => {
-    fetch("http://localhost:5000/rivews")
+    fetch("https://pacific-bastion-98056.herokuapp.com/rivews")
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, []);

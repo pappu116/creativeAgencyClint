@@ -13,7 +13,7 @@ const MainHeader = () => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit
               facilis ratione nisi nulla doloremque dolorem!
             </p>
-            <div className="btn btn-primary">Hire Us</div>
+            <div className="btn btn-brand">Hire Us</div>
           </div>
           <div className="col-md-7">
             <img src={Fram} style={{ width: "100%" }} alt="" />
