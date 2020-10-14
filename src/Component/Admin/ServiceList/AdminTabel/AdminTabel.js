@@ -11,7 +11,7 @@ const AdminTabel = () => {
   const hanelChange = (id) => {
     const status = document.getElementById("inputGroupSelect01").value;
     const product = { id, status };
-    fetch(`https://pacific-bastion-98056.herokuapp.com/update/${id}`, {
+    fetch(`http://localhost:5000/update/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(product),

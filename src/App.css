@@ -8,6 +8,11 @@
   background-color: #f4f7fc;
   min-height: 100vh;
 }
+.h1,
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
 .btn-brand {
   background-color: #111430;
   color: #fff;

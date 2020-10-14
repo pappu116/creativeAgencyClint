@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import CommentsDetails from "./CommentsDetails/CommentsDetails";
 const ClientComments = () => {
   const [item, setItem] = useState([]);
-  const first3 = item.slice(0, 4);
   useEffect(() => {
     fetch("https://pacific-bastion-98056.herokuapp.com/rivews")
       .then((res) => res.json())
@@ -17,7 +16,7 @@ const ClientComments = () => {
           </h2>
         </div>
         <div className="row  mt-5">
-          {first3.map((blog) => (
+          {item.map((blog) => (
             <CommentsDetails blog={blog} />
           ))}
         </div>
