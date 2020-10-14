@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { ServicesContext, UserContext } from "../../../App";
-import TitleBar from "../../Sheard/TitleBar/TitleBar";
 import Sidebar from "../Sidebar/Sidebar";
 import { useForm } from "react-hook-form";
 const Order = () => {
@@ -27,7 +26,24 @@ const Order = () => {
           <Sidebar />
         </div>
         <div className="col-md-10">
-          <TitleBar name="Order" />
+          <div
+            style={{
+              background: "#fff",
+              padding: "10px 20px ",
+              marginLeft: "-15px",
+            }}
+            className="d-flex  justify-content-between "
+          >
+            <h2>Order</h2>
+            <div className="d-flex">
+              <img
+                src={loggedInUser.photo}
+                style={{ height: "40px", borderRadius: "50px" }}
+                alt=""
+              />
+              <h4 className="ml-2">{loggedInUser.name}</h4>
+            </div>
+          </div>
           <div className="col-md-5 mt-5">
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
@@ -45,8 +61,8 @@ const Order = () => {
                 defaultValue={loggedInUser.email}
                 ref={register}
               />
-              <br />
 
+              <br />
               <input
                 name="title"
                 className="control"
@@ -54,7 +70,6 @@ const Order = () => {
                 ref={register}
               />
               <br />
-
               <textarea
                 className="controltext"
                 name="description"

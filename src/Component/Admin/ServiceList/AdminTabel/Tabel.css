@@ -5,6 +5,10 @@ table {
   border-radius: 10px;
 }
 
+.custom-select {
+  border: none;
+}
+
 td,
 th {
   text-align: left;

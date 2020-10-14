@@ -17,7 +17,7 @@ const Service = () => {
             Provide awesome <span style={{ color: "#79B058" }}>services</span>{" "}
           </h1>
         </div>
-        <div className="card-deck mt-5">
+        <div className="row   mt-5">
           {item.map((blog) => (
             <ServiceDetails blog={blog} />
           ))}

@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Sidebar from "../Admin/Sidebar/Sidebar";
-import TitleBar from "../Sheard/TitleBar/TitleBar";
+import icon from "../../images/logos/cloud-upload-outline 1.png";
+
+import "./AddService.css";
+import { UserContext } from "../../App";
 const AddService = () => {
+  const [loggedInUser] = useContext(UserContext);
   const [info, setInfo] = useState({});
   const [file, setFile] = useState(null);
   const handelBlur = (e) => {
@@ -41,46 +45,73 @@ const AddService = () => {
           <Sidebar />
         </div>
         <div className="col-md-10">
-          <TitleBar name="Add Service" />
+          <div
+            style={{
+              background: "#fff",
+              padding: "10px 20px ",
+              marginLeft: "-15px",
+            }}
+            className="d-flex  justify-content-between "
+          >
+            <h2>Add Service</h2>
+            <div className="d-flex">
+              <img
+                src={loggedInUser.photo}
+                style={{ height: "40px", borderRadius: "50px" }}
+                alt=""
+              />
+              <h4 className="ml-2">{loggedInUser.name}</h4>
+            </div>
+          </div>
           <form onSubmit={handelSubmit}>
-            <div
-              style={{ backgroundColor: "#fff", padding: "20px" }}
-              className="d-flex col-md-8"
-            >
+            <div className="d-flex displayStyle ">
               <div className="col-md-5 ">
-                <div class="form-group">
+                <div className="form-group">
                   <label for="title">Title</label>
                   <input
                     onBlur={handelBlur}
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     name="title"
+                    placeholder="Enter Title"
                   />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <label for="description">Description</label>
                   <textarea
                     onBlur={handelBlur}
-                    type="text"
-                    class="form-control"
+                    className="controltext"
                     name="description"
+                    cols="30"
+                    rows="10"
+                    placeholder="Enter Designation"
                   ></textarea>
                 </div>
               </div>
-              <div class="form-group form-file">
+              <div className=" offset-md-1">
                 <label for="file">Icon</label>
-                <input
-                  onChange={handelfileChange}
-                  type="file"
-                  class="form-control"
-                  name="file"
-                />
+                <div className="input-group mb-3">
+                  <div className="custom-file">
+                    <input
+                      type="file"
+                      onChange={handelfileChange}
+                      className="custom-file-input"
+                      id="inputGroupFile02"
+                    />
+                    <label className="custom-file-label" for="inputGroupFile02">
+                      <img style={{ height: "30px" }} src={icon} alt="" />{" "}
+                      Upload Image
+                    </label>
+                  </div>
+                </div>
               </div>
             </div>
             <br />
-            <button type="submit" class="btn btn-primary ">
-              Submit
-            </button>
+            <div class="d-flex justify-content-end">
+              <button type="submit" className="btn btn-brand mr-5 ">
+                Submit
+              </button>
+            </div>
           </form>
         </div>
       </div>

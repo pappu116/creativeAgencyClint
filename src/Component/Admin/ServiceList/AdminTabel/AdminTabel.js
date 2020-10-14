@@ -9,7 +9,26 @@ const AdminTabel = () => {
   }, []);
 
   const hanelChange = (id) => {
-    console.log(id);
+    const status = document.getElementById("inputGroupSelect01").value;
+    const product = { id, status };
+    fetch(`https://pacific-bastion-98056.herokuapp.com/update/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
+  const styleDone = {
+    color: "#009444",
+    padding: "5px 20px",
+  };
+  const stylePending = {
+    color: "#FF4F4F",
+    padding: "5px 20px",
   };
   return (
     <div className=" backgroundAdmin row">
@@ -33,12 +52,11 @@ const AdminTabel = () => {
               <td>
                 <select
                   className="custom-select"
+                  style={item.status === "Done" ? styleDone : stylePending}
                   onChange={() => hanelChange(item._id)}
                   id="inputGroupSelect01"
                 >
-                  <option name="status" selected>
-                    {item.status}
-                  </option>
+                  <option name="status">{item.status}</option>
                   <option name="status" value="Done">
                     Done
                   </option>

@@ -5,10 +5,10 @@ import Logo from "../../../images/logos/logo.png";
 import SmsIcon from "@material-ui/icons/Sms";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import "./Sidebar.css";
-import { UserContext } from "../../../App";
+import { AdminContext, UserContext } from "../../../App";
 const Sidebar = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useContext(AdminContext);
 
   useEffect(() => {
     fetch("https://pacific-bastion-98056.herokuapp.com/isAdmin", {

@@ -17,48 +17,51 @@ import AdminTabel from "./Component/Admin/ServiceList/AdminTabel/AdminTabel";
 export const ServicesContext = createContext();
 
 export const UserContext = createContext();
-
+export const AdminContext = createContext();
 function App() {
   const [item, setItem] = useState({});
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [isAdmin, setIsAdmin] = useState(false);
   return (
     <ServicesContext.Provider value={[item, setItem]}>
       <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-        <Router>
-          <Switch>
-            <Route path="/home">
-              <Home />
-            </Route>
-            <PrivateRoute path="/dashbord">
-              <Dashbord />
-            </PrivateRoute>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/admintabel">
-              <AdminTabel />
-            </Route>
-            <Route exact path="/">
-              <Home />
-            </Route>
+        <AdminContext.Provider value={[isAdmin, setIsAdmin]}>
+          <Router>
+            <Switch>
+              <Route path="/home">
+                <Home />
+              </Route>
+              <PrivateRoute path="/dashbord">
+                <Dashbord />
+              </PrivateRoute>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/admintabel">
+                <AdminTabel />
+              </Route>
+              <Route exact path="/">
+                <Home />
+              </Route>
 
-            <Route path="/addservice">
-              <AddService />
-            </Route>
-            <Route path="/order">
-              <Order />
-            </Route>
-            <Route path="/makeadmin">
-              <MakeAdmin />
-            </Route>
-            <Route path="/review">
-              <Review />
-            </Route>
-            <Route path="/servicelist">
-              <ServiceList />
-            </Route>
-          </Switch>
-        </Router>
+              <Route path="/addservice">
+                <AddService />
+              </Route>
+              <Route path="/order">
+                <Order />
+              </Route>
+              <Route path="/makeadmin">
+                <MakeAdmin />
+              </Route>
+              <Route path="/review">
+                <Review />
+              </Route>
+              <Route path="/servicelist">
+                <ServiceList />
+              </Route>
+            </Switch>
+          </Router>
+        </AdminContext.Provider>
       </UserContext.Provider>
     </ServicesContext.Provider>
   );

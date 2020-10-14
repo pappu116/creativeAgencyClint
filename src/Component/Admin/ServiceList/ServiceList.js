@@ -1,15 +1,14 @@
 import React, { useContext } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { UserContext } from "../../../App";
-import TitleBar from "../../Sheard/TitleBar/TitleBar";
+import { AdminContext, UserContext } from "../../../App";
 import Sidebar from "../Sidebar/Sidebar";
 import AdminTabel from "./AdminTabel/AdminTabel";
 import ServiceListDetails from "./ServiceListDetails/ServiceListDetails";
 
 const ServiceList = () => {
-  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [loggedInUser] = useContext(UserContext);
+  const [isAdmin] = useContext(AdminContext);
 
   const [item, setItem] = useState([]);
   useEffect(() => {
@@ -20,16 +19,6 @@ const ServiceList = () => {
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, []);
-
-  useEffect(() => {
-    fetch("https://pacific-bastion-98056.herokuapp.com/isAdmin", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ email: loggedInUser.email }),
-    })
-      .then((res) => res.json())
-      .then((data) => setIsAdmin(data));
-  }, []);
   return (
     <div className="backgroundAdmin container-fluid   ">
       <div className="row blogs">
@@ -37,7 +26,24 @@ const ServiceList = () => {
           <Sidebar />
         </div>
         <div className="col-md-10 ">
-          <TitleBar name="Service List" />
+          <div
+            style={{
+              background: "#fff",
+              padding: "10px 20px ",
+              marginLeft: "-15px",
+            }}
+            className="d-flex  justify-content-between "
+          >
+            <h2>Service List</h2>
+            <div className="d-flex">
+              <img
+                src={loggedInUser.photo}
+                style={{ height: "40px", borderRadius: "50px" }}
+                alt=""
+              />
+              <h4 className="ml-2">{loggedInUser.name}</h4>
+            </div>
+          </div>
           {isAdmin ? (
             <AdminTabel />
           ) : (

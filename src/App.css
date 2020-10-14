@@ -6,7 +6,7 @@
 }
 .backgroundAdmin {
   background-color: #f4f7fc;
-  height: 100vh;
+  min-height: 100vh;
 }
 .btn-brand {
   background-color: #111430;
