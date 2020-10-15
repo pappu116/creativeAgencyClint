@@ -9,13 +9,11 @@ table {
   border: none;
 }
 
-td,
-th {
+td {
   text-align: left;
-  padding: 20px 40px;
+
   width: 5%;
 }
 thead {
   color: #727273;
-  margin: 20px;
 }

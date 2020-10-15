@@ -33,7 +33,7 @@ const AdminTabel = () => {
   };
   return (
     <div className=" backgroundAdmin row">
-      <table className="tabel">
+      <table className="table table-borderless">
         <thead>
           <tr>
             <th>Name</th>

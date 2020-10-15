@@ -1,22 +1,20 @@
 import React, { createContext } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Home from "./Component/Home/Home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashbord from "./Component/Admin/Dashbord/Dashbord";
 import ServiceList from "./Component/Admin/ServiceList/ServiceList";
-import AddService from "./Component/AddService/AddService";
 import Order from "./Component/Admin/Order/Order";
 import MakeAdmin from "./Component/MakAdmin/MakeAdmin";
 import Review from "./Component/Review/Review";
 import { useState } from "react";
 import Login from "./Component/Login/Login";
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
-import AdminTabel from "./Component/Admin/ServiceList/AdminTabel/AdminTabel";
 import NotFound from "./Component/404/NotFound";
 import OurPortfolio from "./Component/OurPortfolio/OurPortfolio";
 import OurTeam from "./Component/OurTeam/OurTeam";
 import Contac from "./Component/ContacUs/Contac";
+import AddService from "./Component/AddService/AddService";
 
 export const ServicesContext = createContext();
 
@@ -41,6 +39,9 @@ function App() {
               <Route path="/login">
                 <Login />
               </Route>
+              <Route path="/addservice">
+                <AddService />
+              </Route>
               <Route path="/ourportfolio">
                 <OurPortfolio />
               </Route>
@@ -51,9 +52,6 @@ function App() {
                 <Contac />
               </Route>
 
-              <Route path="/addservice">
-                <AddService />
-              </Route>
               <Route exact path="/">
                 <Home />
               </Route>
