@@ -18,8 +18,8 @@ const Service = () => {
           </h1>
         </div>
         <div className="row  mb-5 mt-5">
-          {item.map((blog) => (
-            <ServiceDetails blog={blog} />
+          {item.map((blog, index) => (
+            <ServiceDetails key={index + 1} blog={blog} />
           ))}
         </div>
       </div>

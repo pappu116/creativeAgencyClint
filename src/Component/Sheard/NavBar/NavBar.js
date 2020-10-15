@@ -6,12 +6,12 @@ import Logo from "../../../images/logos/logo.png";
 const NavBar = () => {
   const [loggedInUser, setLoggedInUser] = useState(UserContext);
   return (
-    <nav class="navbar navbar-expand-lg navbar-light ">
-      <Link class="navbar-brand" to="#">
+    <nav className="navbar navbar-expand-lg navbar-light ">
+      <Link className="navbar-brand" to="#">
         <img src={Logo} style={{ height: "40px" }} alt="" />
       </Link>
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
@@ -19,32 +19,32 @@ const NavBar = () => {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <Link class="nav-link" to="/home">
-              Home <span class="sr-only">(current)</span>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav ml-auto">
+          <li className="nav-item active">
+            <Link className="nav-link" to="/home">
+              Home <span className="sr-only">(current)</span>
             </Link>
           </li>
-          <li class="nav-item">
-            <Link class="nav-link" to="/ourportfolio">
+          <li className="nav-item">
+            <Link className="nav-link" to="/ourportfolio">
               OurPortfolio
             </Link>
           </li>
-          <li class="nav-item">
-            <Link class="nav-link" to="ourteam">
+          <li className="nav-item">
+            <Link className="nav-link" to="ourteam">
               Our Team
             </Link>
           </li>
-          <li class="nav-item">
-            <Link class="nav-link" to="contact">
+          <li className="nav-item">
+            <Link className="nav-link" to="contact">
               Contact Us
             </Link>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
             {loggedInUser.email ? (
               <h2>{loggedInUser.name}</h2>
             ) : (

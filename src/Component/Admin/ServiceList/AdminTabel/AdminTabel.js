@@ -53,7 +53,7 @@ const AdminTabel = () => {
               <td>
                 <select
                   style={item.status === "Done" ? styleDone : stylePending}
-                  class="custom-select"
+                  className="custom-select"
                   onChange={() => hanelChange(item._id, index)}
                   id={"inputGroupSelect" + index}
                 >

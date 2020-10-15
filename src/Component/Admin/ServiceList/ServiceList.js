@@ -48,8 +48,8 @@ const ServiceList = () => {
             <AdminTabel />
           ) : (
             <div className="card-deck   mt-5">
-              {item.map((item) => (
-                <ServiceListDetails item={item} />
+              {item.map((item, index) => (
+                <ServiceListDetails key={index + 1} item={item} />
               ))}
             </div>
           )}

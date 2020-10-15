@@ -16,8 +16,8 @@ const ClientComments = () => {
           </h2>
         </div>
         <div className="row  mt-5">
-          {item.map((blog) => (
-            <CommentsDetails blog={blog} />
+          {item.map((blog, index) => (
+            <CommentsDetails key={index + 1} blog={blog} />
           ))}
         </div>
       </div>

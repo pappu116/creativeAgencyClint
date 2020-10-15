@@ -112,7 +112,7 @@ const AddService = () => {
                 </div>
               </div>
               <br />
-              <div class="d-flex justify-content-end">
+              <div className="d-flex justify-content-end">
                 <button type="submit" className="btn btn-brand mr-5 ">
                   Submit
                 </button>

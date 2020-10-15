@@ -25,7 +25,7 @@ const ServiceListDetails = (props) => {
           <button
             type="button"
             style={status === "Done" ? styleDone : stylePending}
-            class="btn "
+            className="btn "
           >
             {status}
           </button>
