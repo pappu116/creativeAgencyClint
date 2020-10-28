@@ -12,7 +12,7 @@
 - 👉 user dashboard or admin Dashboard deferent URL
 - 👉 Admin Added Product
 - 👉 User Want Product Removed/Cancel
-- 👉 Admin Want to Change Status with Admin Dashboard
+- 👉 Admin can change user order status use with Admin Dashboard
 - 👉Logged in Authentication : Firebase
 - 👉logged in User Identify Method Email
 - 👉Admin Want to Add Re-Admin
