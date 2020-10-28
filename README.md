@@ -2,7 +2,7 @@
 
 # creative-agency
 
-**Vertion 0.1.0**
+**Version 0.1.0**
 
 [Demo](https://creativeagency-eb76a.web.app)
 
